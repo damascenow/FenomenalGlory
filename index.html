@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fenomenal Glory</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="brand-button" id="brandHome" aria-label="Voltar ao menu">
+    <img src="logo.png" alt="Fenomenal Glory">
+  </button>
+  <div class="season">
+    <span>FENOMENAL GLORY</span>
+    <small>2026/27</small>
+  </div>
+</header>
+
+<main>
+<section id="home" class="screen active">
+  <div class="hero">
+    <img class="hero-logo" src="logo.png" alt="Fenomenal Glory">
+    <p>Simule a carreira do seu craque!</p>
+    <div class="menu-buttons">
+      <button class="primary menu-option" data-action="career">Iniciar Carreira ⚽</button>
+      <button class="menu-option" data-action="soon">Viagem no Tempo ⌛</button>
+      <button class="menu-option" data-action="soon">Ranking Pessoal 📊</button>
+    </div>
+  </div>
+</section>
+
+<section id="career" class="screen">
+  <div class="creation-header">
+    <div>
+      <span class="eyebrow">TEMPORADA 2026/27</span>
+      <h1>Criação do jogador</h1>
+      <p>Monte seu jogador e comece sua trajetória.</p>
+    </div>
+  </div>
+
+  <div class="creation-content">
+    <section class="panel identity-panel">
+      <div class="panel-heading">
+        <span class="number">01</span>
+        <div><h2>Identidade</h2><p>Informações básicas do jogador.</p></div>
+      </div>
+
+      <div class="form-grid">
+        <div>
+          <label for="playerName">Nome do jogador</label>
+          <input id="playerName" type="text" maxlength="35" placeholder="Insira seu nome">
+        </div>
+        <div>
+          <label for="playerNumber">Número</label>
+          <input id="playerNumber" type="number" min="1" max="99" placeholder="Insira seu número">
+        </div>
+      </div>
+
+      <label>Pé dominante</label>
+      <div class="choice-row">
+        <button class="choice active" data-foot="Esquerdo">Esquerdo</button>
+        <button class="choice" data-foot="Direito">Direito</button>
+      </div>
+    </section>
+
+    <section class="panel country-panel">
+      <div class="panel-heading">
+        <span class="number">02</span>
+        <div><h2>Nacionalidade</h2><p>Escolha o país de origem.</p></div>
+      </div>
+
+      <div class="search-box">
+        <span>⌕</span><input id="countrySearch" type="search" placeholder="Buscar país...">
+      </div>
+      <div id="countries" class="countries"></div>
+      <div id="selectedCountry" class="selected-country">Nenhuma nacionalidade selecionada</div>
+    </section>
+
+    <section class="panel position-panel">
+      <div class="panel-heading">
+        <span class="number">03</span>
+        <div><h2>Posição</h2><p>Escolha a posição principal.</p></div>
+      </div>
+
+      <div class="pitch">
+        <div class="pitch-line halfway"></div>
+        <div class="pitch-circle"></div>
+        <div class="pitch-box top-box"></div>
+        <div class="pitch-box bottom-box"></div>
+
+        <button class="pos pos-ata" data-position="ATA">ATA</button>
+        <button class="pos pos-pe" data-position="PE">PE</button>
+        <button class="pos pos-pd" data-position="PD">PD</button>
+        <button class="pos pos-mei" data-position="MEI">MEI</button>
+        <button class="pos pos-mc" data-position="MC">MC</button>
+        <button class="pos pos-vol" data-position="VOL">VOL</button>
+        <button class="pos pos-le" data-position="LE">LE</button>
+        <button class="pos pos-ld" data-position="LD">LD</button>
+        <button class="pos pos-zag" data-position="ZAG">ZAG</button>
+        <button class="pos pos-gol" data-position="GOL">GOL</button>
+      </div>
+      <div id="positionLabel" class="selection-label">Nenhuma posição selecionada</div>
+    </section>
+
+    <section class="panel characteristic-panel">
+      <div class="panel-heading">
+        <span class="number">04</span>
+        <div><h2>Característica</h2><p>Escolha o estilo que define seu jogador.</p></div>
+      </div>
+
+      <div class="characteristic-grid">
+        <button class="characteristic" data-characteristic="Explosivo">
+          <span class="char-icon">⚡</span>
+          <span><strong>Explosivo</strong><small>Corre muito, dribla bem e chuta como poucos. Se deixar campo pra ele, esquece.</small><em>Referência: Neymar Jr</em></span>
+        </button>
+        <button class="characteristic" data-characteristic="Técnico">
+          <span class="char-icon">🧠</span>
+          <span><strong>Técnico</strong><small>Habilidoso, maestro do time com qualidade nos passes e na organização de jogo.</small><em>Referência: Toni Kroos</em></span>
+        </button>
+        <button class="characteristic" data-characteristic="Finalizador">
+          <span class="char-icon">🎯</span>
+          <span><strong>Finalizador</strong><small>Foco total no chute, não liga para assistências.</small><em>Referência: Ronaldo Fenômeno</em></span>
+        </button>
+        <button class="characteristic" data-characteristic="Muralha">
+          <span class="char-icon">💪</span>
+          <span><strong>Pitbull</strong><small>Forte fisicamente e não deixa nenhum atacante passar.</small><em>Referência: Sergio Ramos</em></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="panel summary-panel">
+      <div class="panel-heading">
+        <span class="number">05</span>
+        <div><h2>Resumo</h2><p>Confira suas escolhas antes de começar.</p></div>
+      </div>
+      <div class="summary-grid">
+        <div><span>Nome</span><strong id="sumName">—</strong></div>
+        <div><span>Número</span><strong id="sumNumber">—</strong></div>
+        <div><span>Pé</span><strong id="sumFoot">Esquerdo</strong></div>
+        <div><span>País</span><strong id="sumCountry">—</strong></div>
+        <div><span>Posição</span><strong id="sumPosition">—</strong></div>
+        <div><span>Característica</span><strong id="sumCharacteristic">—</strong></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="secondary" id="backHome">← Voltar ao menu</button>
+      <button class="primary" id="finishPlayer">Criar jogador →</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-icon">i</div>
+    <h3 id="modalTitle">Fenomenal Glory</h3>
+    <p id="modalText"></p>
+    <button class="primary" id="modalOk">Entendi</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
